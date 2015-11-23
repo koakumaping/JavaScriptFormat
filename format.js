@@ -6,7 +6,16 @@
  */
 
 (function(window){
-	var format = function(){
+	Function.prototype.uncurrying = function(){
+		var self = this;
+		return function(){
+			return Function.prototype.call.apply(self, arguments);
+		};
+	};
+
+	format = format.uncurrying();
+
+	function format(){
 		if (arguments.length == 0){
 			return '';
 		} else {
@@ -21,6 +30,5 @@
 			}
 		}
 	};
-
 	window.format = window.format || format;
 })(window);

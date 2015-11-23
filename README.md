@@ -4,7 +4,8 @@
 ## 用法
 
 ``` javascript
-    format('a is {0}, b is {1}', 'test','haha');
+    format(console.log(),'a is {0}, b is {1}', 'test','haha');
+    format('','a is {0}, b is {1}', 'test','haha');
 ``` 
 
 ## 显示结果
