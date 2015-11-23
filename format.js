@@ -6,14 +6,14 @@
  */
 
 (function(window){
-	Function.prototype.uncurrying = function(){
-		var self = this;
-		return function(){
-			return Function.prototype.call.apply(self, arguments);
-		};
-	};
 
-	format = format.uncurrying();
+	function uncurryThis(fn) {
+	  return function() {
+	    return Function.call.apply( fn, arguments );
+	  };
+	}
+
+	format = uncurryThis(format);
 
 	function format(){
 		if (arguments.length == 0){
@@ -29,6 +29,7 @@
 				return toReplace;
 			}
 		}
-	};
+	}
+
 	window.format = window.format || format;
 })(window);
