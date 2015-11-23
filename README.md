@@ -4,7 +4,7 @@
 ## 用法
 
 ``` javascript
-    console.log(format('a is {0}, b is {1}', 'test','haha'));
+    format('a is {0}, b is {1}', 'test','haha');
 ``` 
 
 ## 显示结果
